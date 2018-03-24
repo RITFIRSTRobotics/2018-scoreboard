@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Grid, Navbar, Jumbotron, Button, PageHeader } from 'react-bootstrap';
 import axios from "axios";
-import logo from './logo.svg';
 import './App.css';
 import TeamList from "./components/TeamList";
 import MatchInfo from "./components/MatchInfo";
@@ -45,13 +45,30 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Ping Pong Panic</h1>
-        </header>
-        <p className="App-intro">
-          This is under the <code>App-intro</code> class.
-        </p>
+        <Navbar inverse fixedTop>
+          <Grid>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <a href="/">Ping Pong Panic</a>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+          </Grid>
+        </Navbar>
+        <Jumbotron>
+          <Grid>
+            <PageHeader>Welcome to Ping Pong Panic!</PageHeader>
+            <p>
+              <Button
+                bsStyle="success"
+                bsSize="large"
+                href="/"
+                target="_blank">
+                Are You Ready?
+              </Button>
+            </p>
+          </Grid>
+        </Jumbotron>
         <TeamList teams={teams}/>
         <MatchInfo timer={this.state.timer} redScore={this.state.redScore} blueScore={this.state.blueScore}/>
       </div>
