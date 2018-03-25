@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Navbar, Jumbotron, Button, PageHeader } from 'react-bootstrap';
+import { Grid, Navbar, Jumbotron, Button, PageHeader, ProgressBar, Panel } from 'react-bootstrap';
 import axios from "axios";
 import './App.css';
 import TeamList from "./components/TeamList";
@@ -69,6 +69,15 @@ class App extends Component {
             </p>
           </Grid>
         </Jumbotron>
+        <Panel>
+          <Panel.Heading componentClass="h1">Scores</Panel.Heading>
+          <Panel.Body>
+            <ProgressBar className="large-scores">
+              <ProgressBar bsStyle="info" now={50} key={1} label={this.state.blueScore}/>
+              <ProgressBar bsStyle="danger" now={50} key={2} label={this.state.redScore}/>
+            </ProgressBar>
+          </Panel.Body>
+        </Panel>
         <TeamList teams={teams}/>
         <MatchInfo timer={this.state.timer} redScore={this.state.redScore} blueScore={this.state.blueScore}/>
       </div>
