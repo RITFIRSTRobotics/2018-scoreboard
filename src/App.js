@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Grid, Navbar, Jumbotron, Button, PageHeader, ProgressBar, Panel } from 'react-bootstrap';
+import { Grid, Navbar, Jumbotron, Button, PageHeader, ProgressBar, Panel, Well } from 'react-bootstrap';
 import axios from "axios";
 import './App.css';
 import TeamList from "./components/TeamList";
 import MatchInfo from "./components/MatchInfo";
+import Timer from "./components/Timer";
 
 const teams = [
   {id: 1, name: "Red Team"},
@@ -12,7 +13,7 @@ const teams = [
 
 class App extends Component {
   state = {
-    timer: 0,
+    timer: 135,
     redScore: 0,
     blueScore: 0
   };
@@ -79,7 +80,9 @@ class App extends Component {
           </Panel.Body>
         </Panel>
         <TeamList teams={teams}/>
-        <MatchInfo timer={this.state.timer} redScore={this.state.redScore} blueScore={this.state.blueScore}/>
+        <Well bsSize="large">
+          <Timer count={this.state.timer}/>
+        </Well>
       </div>
     );
   }
