@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   fetchTimer() {
-    fetch("http://localhost:5000/game/timer")
+    fetch("http://10.0.1.2:5000/game/timer")
       .then(res => res.json())
       .then(
         (result) => {
@@ -37,7 +37,7 @@ class App extends Component {
   };
 
   fetchScores() {
-    fetch("http://localhost:5000/game/scores")
+    fetch("http://10.0.1.2:5000/game/scores")
       .then(res => res.json())
       .then(
         (result) => {
