@@ -92,17 +92,18 @@ class App extends Component {
             </Grid>
           </Jumbotron>
           <Grid>
-            <h1>
+            <h2>
               <Label bsStyle="default">Scores</Label>
-            </h1>
+            </h2>
             <ProgressBar className="large-scores">
                 <ProgressBar bsStyle="info" now={((blueScore+1)*80)/(blueScore+redScore+2)+10} key={1} label={blueScore}/>
                 <ProgressBar bsStyle="danger" now={((redScore+1)*80)/(blueScore+redScore+2)+10} key={2} label={redScore}/>
             </ProgressBar>
-            <h1>
+            <h2>
               <Label bsStyle="default">Timer</Label>
-            </h1>
+            </h2>
             <Timer remaining={timer}/>
+            <ProgressBar bsStyle="success" now={timer*100/135}/>
           </Grid>
         </div>
       );
