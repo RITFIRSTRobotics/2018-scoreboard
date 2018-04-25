@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Navbar, Jumbotron, Label, PageHeader, ProgressBar, Panel, Well } from 'react-bootstrap';
+import { Grid, Navbar, Jumbotron, Label, PageHeader, ProgressBar } from 'react-bootstrap';
 import 'whatwg-fetch';
 import './App.css';
 import Timer from "./components/Timer";
@@ -96,8 +96,8 @@ class App extends Component {
               <Label bsStyle="default">Scores</Label>
             </h1>
             <ProgressBar className="large-scores">
-                <ProgressBar bsStyle="info" now={50} key={1} label={blueScore}/>
-                <ProgressBar bsStyle="danger" now={50} key={2} label={redScore}/>
+                <ProgressBar bsStyle="info" now={((blueScore+1)*80)/(blueScore+redScore+2)+10} key={1} label={blueScore}/>
+                <ProgressBar bsStyle="danger" now={((redScore+1)*80)/(blueScore+redScore+2)+10} key={2} label={redScore}/>
             </ProgressBar>
             <h1>
               <Label bsStyle="default">Timer</Label>
