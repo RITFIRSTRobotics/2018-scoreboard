@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Navbar, Jumbotron, PageHeader, ProgressBar, Panel, Well } from 'react-bootstrap';
+import { Grid, Navbar, Jumbotron, Label, PageHeader, ProgressBar, Panel, Well } from 'react-bootstrap';
 import 'whatwg-fetch';
 import './App.css';
 import Timer from "./components/Timer";
@@ -83,7 +83,6 @@ class App extends Component {
                 <Navbar.Brand>
                   <a href="/">Ping Pong Panic</a>
                 </Navbar.Brand>
-                <Navbar.Toggle />
               </Navbar.Header>
             </Grid>
           </Navbar>
@@ -92,18 +91,19 @@ class App extends Component {
               <PageHeader>Let's Play: Ping Pong Panic!</PageHeader>
             </Grid>
           </Jumbotron>
-          <Panel>
-            <Panel.Heading componentClass="h1">Scores</Panel.Heading>
-            <Panel.Body>
-              <ProgressBar className="large-scores">
+          <Grid>
+            <h1>
+              <Label bsStyle="default">Scores</Label>
+            </h1>
+            <ProgressBar className="large-scores">
                 <ProgressBar bsStyle="info" now={50} key={1} label={blueScore}/>
                 <ProgressBar bsStyle="danger" now={50} key={2} label={redScore}/>
-              </ProgressBar>
-            </Panel.Body>
-          </Panel>
-          <Well bsSize="large">
+            </ProgressBar>
+            <h1>
+              <Label bsStyle="default">Timer</Label>
+            </h1>
             <Timer remaining={timer}/>
-          </Well>
+          </Grid>
         </div>
       );
     }

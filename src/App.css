@@ -29,9 +29,10 @@
 
 .large-scores.progress {
   height: 100px;
+  margin: 43px;
 }
 
 .large-scores .progress-bar {
-  padding: 43px 0;
+  padding: 45px 0;
   font-size: xx-large;
 }
